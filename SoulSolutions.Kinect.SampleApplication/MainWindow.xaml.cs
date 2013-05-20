@@ -54,8 +54,6 @@ namespace SoulSolutions.Kinect.SampleApplication
         //停止自動選擇骨架功能，由開發者自己選擇要追蹤的骨架
         private void NuiSkeletonFrameReady(object sender, SkeletonFrameReadyEventArgs e)
         {
-            SkeletonFrame allSkeletons = e.OpenSkeletonFrame();
-
             using (SkeletonFrame skframe = e.OpenSkeletonFrame())
             {
                 if (skframe != null)
@@ -71,11 +69,11 @@ namespace SoulSolutions.Kinect.SampleApplication
                     skframe.CopySkeletonDataTo(FrameSkeletons);
 
                     var alluser = from s in FrameSkeletons
-                                     where s.TrackingState != SkeletonTrackingState.NotTracked
-                                     select s;
+                                  where s.TrackingState != SkeletonTrackingState.NotTracked
+                                  select s;
 
-                    int allusers = alluser.Count() ;
-                    Title = "所有可追蹤到的骨架數量為 : " + allusers ;
+                    int allusers = alluser.Count();
+                    Title = "所有可追蹤到的骨架數量為 : " + allusers;
                     if (allusers > 0)
                     {
                         Skeleton user = ClosestUser(alluser);
@@ -83,7 +81,7 @@ namespace SoulSolutions.Kinect.SampleApplication
                         skeleton1.SkeletonData = user;
                     }
                 }
-            }           
+            }
         }
         private Skeleton ClosestUser(IEnumerable<Skeleton> users)
         {
@@ -95,7 +93,7 @@ namespace SoulSolutions.Kinect.SampleApplication
         ////只選用離感應器最近的使用者顯示其骨架
         //private void NuiSkeletonFrameReady(object sender, SkeletonFrameReadyEventArgs e)
         //{
-        //    SkeletonFrame allSkeletons = e.OpenSkeletonFrame();
+        //    
 
         //    using (SkeletonFrame skframe = e.OpenSkeletonFrame())
         //    {
@@ -137,7 +135,7 @@ namespace SoulSolutions.Kinect.SampleApplication
         ////使用 LINQ語法篩選出所有已被追蹤之骨架，分別對不同的已追蹤骨架給予不同的骨架資訊
         //private void NuiSkeletonFrameReady(object sender, SkeletonFrameReadyEventArgs e)
         //{
-        //    SkeletonFrame allSkeletons = e.OpenSkeletonFrame();
+            
 
         //    using (SkeletonFrame skframe = e.OpenSkeletonFrame())
         //    {
