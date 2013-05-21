@@ -93,8 +93,6 @@ namespace SoulSolutions.Kinect.SampleApplication
         ////只選用離感應器最近的使用者顯示其骨架
         //private void NuiSkeletonFrameReady(object sender, SkeletonFrameReadyEventArgs e)
         //{
-        //    
-
         //    using (SkeletonFrame skframe = e.OpenSkeletonFrame())
         //    {
         //        if (skframe != null)
@@ -135,8 +133,6 @@ namespace SoulSolutions.Kinect.SampleApplication
         ////使用 LINQ語法篩選出所有已被追蹤之骨架，分別對不同的已追蹤骨架給予不同的骨架資訊
         //private void NuiSkeletonFrameReady(object sender, SkeletonFrameReadyEventArgs e)
         //{
-            
-
         //    using (SkeletonFrame skframe = e.OpenSkeletonFrame())
         //    {
         //        if (skframe != null)
